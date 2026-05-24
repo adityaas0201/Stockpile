@@ -24,7 +24,7 @@ const CATEGORY_GLYPHS: Record<string, string> = {
   Keyboards: "⌨",
   Audio: "◉",
   Displays: "▣",
-  Mice: "◈",
+  Mouse: "◈",
   Accessories: "⬡",
 };
 
