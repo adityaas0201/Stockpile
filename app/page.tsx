@@ -142,7 +142,7 @@ export default function HomePage() {
       </section>
 
       <footer style={{ borderTop: "1px solid var(--border)", padding: "2rem", marginTop: "4rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--mist)" }}>STOCKPILE © 2025 — INVENTORY RESERVE SYSTEM</span>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--mist)" }}>STOCKPILE © 2026 — INVENTORY RESERVE SYSTEM</span>
         <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--mist)" }}>Reservations expire after 15 minutes</span>
       </footer>
 
