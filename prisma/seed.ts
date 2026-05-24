@@ -1,9 +1,11 @@
 import { PrismaClient } from "@prisma/client";
+import { PrismaNeon } from "@prisma/adapter-neon";
 
-const prisma = new PrismaClient();
+const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
-  console.log("🌱 Seeding database...");
+  console.log("Seeding database...");
 
   // Clean up
   await prisma.idempotencyKey.deleteMany();
@@ -37,7 +39,7 @@ async function main() {
     }),
   ]);
 
-  console.log(`✅ Created ${warehouses.length} warehouses`);
+  console.log(`Created ${warehouses.length} warehouses`);
 
   // Products
   const products = await Promise.all([
@@ -103,7 +105,7 @@ async function main() {
     }),
   ]);
 
-  console.log(`✅ Created ${products.length} products`);
+  console.log(`Created ${products.length} products`);
 
   // Stock levels — deliberate scarcity on some to make 409 easy to trigger
   const stockData = [
@@ -231,8 +233,8 @@ async function main() {
     )
   );
 
-  console.log(`✅ Created ${stockData.length} stock levels`);
-  console.log("🎉 Seed complete");
+  console.log(`Created ${stockData.length} stock levels`);
+  console.log("Seed complete");
 }
 
 main()
